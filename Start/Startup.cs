@@ -28,7 +28,11 @@ namespace UserManagement
                     userNameidentifier: "foo.bar", // Will be written into ClaimTypes.NameIdentifier
                     userRole: "administrator");    // Will be written into ClaimTypes.Role
             services.AddControllers();
-            services.AddSwaggerDocument();
+            services.AddOpenApiDocument(doc =>
+            {
+                doc.Title = "User Management API";
+                doc.Description = "Demo API for C# course of HTL Leonding";
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
