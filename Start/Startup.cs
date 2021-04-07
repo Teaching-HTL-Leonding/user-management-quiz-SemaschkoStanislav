@@ -28,6 +28,7 @@ namespace UserManagement
                     userNameidentifier: "foo.bar", // Will be written into ClaimTypes.NameIdentifier
                     userRole: "administrator");    // Will be written into ClaimTypes.Role
             services.AddControllers();
+            services.AddSwaggerDocument();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -41,6 +42,8 @@ namespace UserManagement
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseOpenApi();
+            app.UseSwaggerUi3();
             app.UseEndpoints(endpoints => endpoints.MapControllers());
         }
     }

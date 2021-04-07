@@ -59,6 +59,18 @@ namespace UserManagement.Data
 
             #region Add some groups
             // Add code to generate demo groups here
+            dc.Groups.Add(new Group
+            {
+                Name = "FooGroup"
+            });
+            dc.Groups.Add(new Group
+            {
+                Name = "BarGroup"
+            });
+            dc.Groups.Add(new Group
+            {
+                Name = "DoeGroup"
+            });
             #endregion
 
             await dc.SaveChangesAsync();
